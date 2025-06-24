@@ -187,14 +187,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #000000 100%);
+  background: radial-gradient(ellipse at top, rgba(253, 0, 0, 0.504) 0%, rgb(0, 0, 0) 66%);
   overflow: hidden;
 }
 
 .hero-background {
   position: absolute;
   inset: 0;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23374151" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  /* background-color: black; */
   opacity: 0.1;
 }
 
@@ -304,7 +304,8 @@ body {
 
 .premium-btn {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 12px 24px;
   font-size: 1rem;
   background-color: #ff0000;
@@ -319,7 +320,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 /* .premium-btn:hover {
@@ -330,7 +331,8 @@ body {
 /* Selling Points */
 .selling-points {
   padding: 80px 0;
-  background: linear-gradient(180deg, #000000 0%, #1f2937 100%);
+  background: black ;
+  /* background: linear-gradient(180deg, #000000 0%, #1f2937 100%); */
 }
 
 .section-header {
@@ -417,6 +419,35 @@ body {
   line-height: 1.6;
 }
 
+/* services sec home page */
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -484,6 +515,7 @@ body {
 
 .learn-more-btn {
   display: block;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
   background-color: #374151;
@@ -501,6 +533,239 @@ body {
   background-color: rgba(107, 114, 128, 0.6);
   border: 1px solid #dc2626;
 }
+
+/* Consultation CTA Section */
+/* Container Styles */
+.consultation-section {
+  background: linear-gradient(145deg, #111111, #1a1a1a); /* smooth dark bg */
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 3rem auto; /* center it */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Heading */
+.consultation-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.consultation-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* Button Container */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Red Button */
+.btn-red {
+  background-color: #d60000;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #ff1a1a;
+}
+
+/* Black Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: 2px solid #aaa;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #d60000;
+  color: #ff4c4c;
+}
+
+@media (min-width: 600px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Testimonial sec */
+.testimonial-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 50px;
+  background-color: #000;
+  color: #fff;
+}
+
+.testimonial-text-col {
+  flex: 1;
+}
+
+.testimonial-slider {
+  flex: 1;
+  position: relative;
+  background-color: #111;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.testimonial-slide {
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-slide.active {
+  display: block;
+}
+
+.testimonial-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.testimonial-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background-color: #555;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.testimonial-dots .dot.active {
+  background-color: red;
+}
+
+/* home page about sec */
+.about-section {
+  padding: 40px;
+  background: #000;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: red;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.about-grid-2col {
+  display: flex;
+  gap: 20px;
+  padding-left: 2%;
+  padding-right: 10%;
+}
+
+/* Left Column */
+.left-col {
+  flex: 1; /* 1/3 width */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 10%;
+}
+
+/* Right Column */
+.right-col {
+  flex: 2; /* 2/3 width */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Individual Box */
+.about-box {
+  background: #1a1a1a;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+.box-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.about-list {
+  padding-left: 20px;
+}
+
+.about-icon {
+  font-size: 30px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.box-subtitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .about-grid-2col {
+    flex-direction: column;
+  }
+
+  .box-row {
+    flex-direction: column;
+  }
+}
+
+
 
 /* Services Section */
 .services-section {
@@ -613,7 +878,7 @@ body {
 
 /* trusted-partener styling */
 .trusted-partners {
-  background-color: #0a0a0a;
+  background-color: black;
   padding: 60px 0;
   color: #fff;
 }
@@ -658,6 +923,7 @@ body {
 }
 
 .partners-grid {
+  background: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -1122,6 +1388,15 @@ body {
   color: white;
   margin-bottom: 8px;
 }
+
+.contact-section-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: red;
+  margin-bottom: 2rem;
+}
+
 
 .form-description {
   color: #d1d5db;
