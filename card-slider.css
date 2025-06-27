@@ -1,0 +1,110 @@
+.infinite-scroll-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px 0;
+}
+
+.infinite-scroll-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-cards 20s linear infinite;
+  padding: 0 20px;
+}
+
+.infinite-scroll-card {
+  flex: 0 0 250px;
+  height: 200px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.infinite-scroll-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  height: 100%;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-content i {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.card-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+@keyframes scroll-cards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 3 - 60px));
+  }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .infinite-scroll-card {
+    background: linear-gradient(135deg, #8a3eff, #3a7bd5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .infinite-scroll-container {
+    max-width: 100%;
+    padding: 15px 0;
+  }
+  
+  .infinite-scroll-card {
+    flex: 0 0 200px;
+    height: 160px;
+  }
+  
+  .card-content i {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .card-content p {
+    font-size: 12px;
+  }
+  
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 3 - 60px));
+    }
+  }
+}
